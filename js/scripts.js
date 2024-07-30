@@ -26,9 +26,6 @@ const images = [
 
 const container = document.getElementById("main-container");
 const singleItem = document.getElementsByClassName("image-container");
-const next = document.getElementById("right");
-const prev = document.getElementById("left");
-
 
 for (let i = 0; i < images.length; i++) {
     
@@ -46,7 +43,9 @@ for (let i = 0; i < images.length; i++) {
             </div>
         </div>
     `    
-    } else {
+    } 
+    
+    else {
         container.innerHTML += `
         <div class="image-container item">
             <img src="${images[i].image}">
@@ -63,6 +62,8 @@ for (let i = 0; i < images.length; i++) {
     }
 }
 
+const next = document.getElementById("right");
+const back = document.getElementById("left");
 let activeItem = 0;
 
 next.addEventListener("click",
@@ -86,7 +87,7 @@ next.addEventListener("click",
     }
 )
 
-prev.addEventListener("click",
+back.addEventListener("click",
     function(){
         if(activeItem > 0){
            singleItem[activeItem].classList.remove("active");
